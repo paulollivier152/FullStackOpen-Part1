@@ -3,6 +3,14 @@ import "./App.css"
 import React, { useState } from "react"
 
 const Statistics = ({good, bad, neutral, all}) => {
+  if (all === 0){
+    return (
+      <div>
+        <h1>statistics</h1>
+        <p>no feedback given</p>
+      </div>
+    )
+  }
   return (
     <div>
       <h1>statistics</h1>
