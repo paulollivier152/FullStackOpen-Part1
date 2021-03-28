@@ -13,9 +13,9 @@ function App() {
   const [selected, setSelected] = useState(0)
 
   const handleNextClick = () => {
-    //generate random number betweeen 1,5 and minus 1
-    setSelected(Math.floor(Math.random() * 5))
+    setSelected(Math.floor(Math.random() * 6))
  }
+
 
   return (
     <div>
