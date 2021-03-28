@@ -10,18 +10,29 @@ function App() {
     "Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.",
   ]
 
+  
   const [selected, setSelected] = useState(0)
+  const [points, setPoints] = useState([0,0,0,0,0,0])
 
   const handleNextClick = () => {
     setSelected(Math.floor(Math.random() * 6))
- }
+  }
 
+  const handleVoteClick = () => {
+    const copy = { ...points }
+    copy[selected] += 1
+    setPoints(copy)
+    console.log(points)
+  }
 
   return (
     <div>
       {anecdotes[selected]}
       <br />
+      has {points[selected]} votes
+      <br />
       <button onClick={handleNextClick}>next anecdote</button>
+      <button onClick={handleVoteClick}>vote</button>
     </div>
   )
 }
