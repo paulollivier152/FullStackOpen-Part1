@@ -3,7 +3,10 @@ import "./App.css"
 import React, { useState } from "react"
 
 const Statistic = ({text, value, sign}) => (
-  <p>{text} {value} {sign}</p>
+  <tr>
+  <td>{text} </td>
+  <td>{value} {sign}</td>
+  </tr>
 )
 
 const Statistics = ({good, bad, neutral, all}) => {
@@ -18,12 +21,16 @@ const Statistics = ({good, bad, neutral, all}) => {
   return (
     <div>
       <h1>statistics</h1>
+      <table>
+        <tbody>
       <Statistic text="good" value={good} />
       <Statistic text="neutral" value={neutral} />
       <Statistic text="bad" value={bad} />
       <Statistic text="all" value={all} />
       <Statistic text="average" value={(good - bad) / all} />
       <Statistic text="positive" value={(good / all) * 100} sign="%" />
+      </tbody>
+      </table>
     </div>
   )
 }
