@@ -30,7 +30,7 @@ function App() {
   }
 
   const handleVoteClick = () => {
-    const copy = { ...points }
+    const copy = [...points]
     copy[selected] += 1
     setPoints(copy)
   }
